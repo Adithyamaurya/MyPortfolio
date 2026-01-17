@@ -1,0 +1,89 @@
+.cyber-pattern {
+  width: 100%;
+  height: 100vh;
+  background-color: #050505;
+
+  background-image:
+    radial-gradient(circle at center, transparent 90%, #000 90%),
+
+    /* cyan grid */
+    linear-gradient(rgba(3, 233, 244, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(3, 233, 244, 0.1) 1px, transparent 1px),
+
+    /* magenta grid */
+    linear-gradient(rgba(217, 3, 244, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 3, 244, 0.05) 1px, transparent 1px);
+
+  background-size:
+    100% 100%,
+    60px 60px,
+    60px 60px,
+    20px 20px,
+    20px 20px;
+
+  animation: cyber-move 10s linear infinite;
+}
+
+@keyframes cyber-move {
+  0% {
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0 0;
+  }
+
+  100% {
+    background-position:
+      0 0,
+      60px 60px,
+      60px 60px,
+      40px 40px,
+      40px 40px;
+  }
+}
+
+/* GLITCH TEXT */
+.glitch {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.glitch::before {
+  color: #00ffff;
+  z-index: -1;
+}
+
+.glitch::after {
+  color: #ff00ff;
+  z-index: -2;
+}
+
+.glitch:hover::before {
+  animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) both 15;
+}
+
+.glitch:hover::after {
+  animation: glitch 0.3s cubic-bezier(.25,.46,.45,.94) reverse both 15;
+}
+
+@keyframes glitch {
+  0%   { transform: translate(0); }
+  20%  { transform: translate(-5px, 5px); }
+  40%  { transform: translate(-5px, -5px); }
+  60%  { transform: translate(5px, 5px); }
+  80%  { transform: translate(5px, -5px); }
+  100% { transform: translate(0); }
+}

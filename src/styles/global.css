@@ -1,0 +1,56 @@
+/* Change 700 to 700;900 */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+}
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); filter: hue-rotate(0deg); }
+  20% { transform: skew(3deg); filter: hue-rotate(90deg); }
+  40% { transform: skew(-3deg); }
+  60% { transform: skew(1deg); }
+  100% { transform: skew(0deg); filter: hue-rotate(0deg); }
+}
+
+.glitch-active {
+  animation: glitch-skew 0.3s ease-in-out;
+  text-shadow: 2px 0 #00ffea, -2px 0 #ff0055;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply bg-dark-bg text-white font-mono overflow-x-hidden relative;
+  }
+
+  section {
+    @apply py-20 px-[10%] relative z-[2];
+  }
+
+  h1, h2, h3 {
+    @apply font-sans font-bold;
+  }
+}
+
+@layer utilities {
+  .neon-text {
+    @apply text-neon-green;
+    text-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+  }
+
+  .glow {
+    box-shadow: 0 0 10px #00ff41, 0 0 20px #00ff41;
+  }
+}

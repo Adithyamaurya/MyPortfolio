@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .matrix {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #000;
+    overflow: hidden;
+    font-family: monospace;
+  }
+
+  .column {
+    position: absolute;
+    top: -100%;
+    width: 20px;
+    font-size: 16px;
+    line-height: 18px;
+    animation: fall linear infinite;
+    white-space: nowrap;
+  }
+
+  .char {
+    display: block;
+    color: #00ff41;
+    text-shadow: 0 0 8px #00ff41;
+  }
+
+  @keyframes fall {
+    from { transform: translateY(-80%); }
+    to   { transform: translateY(200%); }
+  }
