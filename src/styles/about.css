@@ -4,7 +4,7 @@
   background-color: #050505;
 
   background-image:
-    radial-gradient(circle at center, transparent 90%, #000 90%),
+    radial-gradient(circle at center, transparent 90%, #000 100%),
 
     /* cyan grid */
     linear-gradient(rgba(3, 233, 244, 0.1) 1px, transparent 1px),
